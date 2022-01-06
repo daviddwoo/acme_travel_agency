@@ -79,15 +79,14 @@ class BookTrip extends React.Component {
       <div className='bt'>
           <div className='bt-header'>
             <h1>Book Your Client's Trip Now!</h1>
-            <h3>Use the following form on the left to book the trip</h3>
-            <h3>The latest trips will be shown on the right</h3>
-            <h3>Our total current trip count: {trips.length}</h3>
+            <div className='bt-header-border'></div>
+            <h2>Total Trip Count: {trips.length}</h2>
           </div>
         <div className='bt-form'>
           <div className='bt-left'>
             <div className='bt-form-out-wrapper'>
               <div className='bt-header-wrapper'>
-                <h1>Book your Client's Trip!</h1>
+                <h1>Book Here!</h1>
               </div>
               <form onSubmit={this.onSubmit}>
                 <div className='bt-form-wrapper'>
