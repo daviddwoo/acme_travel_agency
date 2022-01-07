@@ -119,10 +119,16 @@
   cursor: pointer;
 }
 
+#link-button {
+  text-decoration: none;
+}
+
 /* BookTrip CSS */
 
 .bt {
   height: 100%;
+  -webkit-animation: moveFromRightFade 1s ease both;
+	animation: moveFromRightFade 1s ease both;
 }
 
 .bt-header {

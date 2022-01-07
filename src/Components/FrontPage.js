@@ -1,5 +1,6 @@
 import React from 'react'
 import Travel from '../../public/trav.png'
+import { Link } from 'react-router-dom'
 
 const FrontPage = () => {
   return (
@@ -10,9 +11,11 @@ const FrontPage = () => {
             <h3>Welcome to the</h3>
             <h1>Acme Travel Agency</h1>
             <h2>Begin your journey with us! Book your trip now!</h2>
-            <button className='btn btn2'>
-              Book Your Next Trip 
-            </button>
+            <Link to='/booktrips' id='link-button'>
+              <button className='btn btn2'>
+                Book Your Next Trip 
+              </button>
+            </Link>
           </div>
         </div>
       </div>

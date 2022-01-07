@@ -4,7 +4,8 @@ import ClientTrips from './Components/ClientTrips'
 import FrontPage from './Components/FrontPage'
 import { connect } from 'react-redux'
 import { loadClients, loadPlaces, loadTrips } from './store'
-import { HashRouter as Router, Route } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch} from 'react-router-dom'
+// import Routes from './Components/Routes'
 
 
 class App extends React.Component {
@@ -19,10 +20,11 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          {/* <h1>Acme Travel Agency</h1> */}
-          <Route exact path='/' component={FrontPage}/>
-          <Route exact path='/' component={BookTrip}/>
-          <Route path='/clients/:id' component={ClientTrips} />
+          <Switch>
+            <Route exact path='/home' component={FrontPage}/>
+            <Route path='/booktrips' component={BookTrip}/>
+            <Route path='/clients/:id' component={ClientTrips} />
+          </Switch>
         </div>
       </Router>
     )
