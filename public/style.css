@@ -1,5 +1,5 @@
 * {
-  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Front Page CSS */
@@ -38,6 +38,11 @@
 .fp-img {
   width: 120%;
   height: 120%;
+  animation: fadeInLeft 1.0s ease-in-out;
+}
+
+.fp-title {
+  animation: fadeInLeft 1.0s ease-in-out;
 }
 
 .fp-title h1 {
@@ -57,7 +62,7 @@
   margin-bottom: 0%;
 }
 
-.fp-title button {
+/* .fp-title button { 
   display: flex;
   text-align: center;
   align-items: center;
@@ -69,51 +74,77 @@
   border: none;
   border-radius: 15px;
   margin-top: 10%;
-  background: rgb(0,66,195);
-  /* background: linear-gradient(90deg, rgba(0,66,195,1) 0%, rgba(147,203,255,1) 100%); */
+  background: rgb(0,66,195); 
+  box-shadow: 0 0 15px rgb(0 0 0 / 0.3); 
+} */
+
+/* .fp-title button:hover {
+  cursor: pointer;
+}
+*/
+/* .react-icon-arrow {
+  font-size: 2.2rem;
+} */
+
+.btn {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  color: rgb(0,66,195);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
+  width: 16rem;
+  border: none;
+  border-radius: 15px;
+  margin-top: 10%;
+  background: white; 
   box-shadow: 0 0 15px rgb(0 0 0 / 0.3); 
 }
 
-.fp-title button:hover {
+.btn2 {
+  color: white;; 
+  border: 3px solid rgb(0,66,195);
+  background-image: -webkit-linear-gradient(30deg, rgb(0,66,195), transparent 50%);
+  background-image: linear-gradient(30deg, rgb(0,66,195) 50%, transparent 50%);
+  background-size: 700px;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.btn2:hover {
+  background-position: 100%;
+  color: rgb(0,66,195);;
   cursor: pointer;
 }
-
-.react-icon-arrow {
-  font-size: 2.2rem;
-}
-
-/* .fp-clip {
-  clip-path: polygon(100% 0%, 100% 100%, 36.9% 100%);
-  background-color: navy;
-} */
-
 
 /* BookTrip CSS */
 
 .bt {
-  height: 80vh;
-  background-color: rgb(0,66,195);
+  height: 100%;
 }
 
 .bt-header {
   text-align: center;
   align-content: center;
-  color: white;
+  color: black;
 }
 
 .bt-header h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   margin-bottom: 1%;
 }
 
 .bt-header h2 {
   font-size: 3rem;
+  margin-top: 2%;
 }
 
 .bt-header-border {
-  border-top: 5px solid white;
-  width: 10%;
-  margin-left: 44%;
+  border-top: 5px solid black;
+  width: 15%;
+  margin-left: 42%;
   text-align: center;
 }
 
@@ -193,6 +224,21 @@
   color: white;
 }
 
+.bt-form-goToTrip-button {
+  position: absolute;
+  margin-top: 1%;
+  background-color: rgb(0,66,195);
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  width: 5%;
+}
+
+.bt-form-goToTrip-button:hover {
+  cursor: pointer;
+}
+
 /* .bt-right-table-wrapper {
   border-radius: 25px;
 } */
@@ -251,3 +297,109 @@
 /* #bt-delay-td {
   text-align: center;
 } */
+
+/* Client Trips CSS */
+
+.ct {
+  display: flex;
+  height: 100%;
+  -webkit-animation: moveFromRightFade 1s ease both;
+	animation: moveFromRightFade 1s ease both;
+}
+
+.ct-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ct-left-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: rgba(147,203,255,1); */
+}
+
+.ct-client-trips {
+  width: 90%;
+}
+
+.ct-right {
+  flex: 1;
+  width: 90%;
+}
+
+.ct-client-trips h1{
+  text-align: center;
+  font-size: 4rem;
+}
+
+.ct-trips {
+  border-collapse: collapse;
+  width: 95%;
+  box-shadow: 0 0 15px rgb(0 0 0 / 0.5);
+  color: white;
+}
+
+.ct-trips th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #161a1f;
+  color: white;
+}
+
+.ct-trips th {
+  font-size: 1rem;
+}
+
+.ct-trips td, .ct-trips th {
+  border: 1px solid #2C3845;
+  padding: 8px;
+}
+
+.bt-tbody {
+  background-color: #2C3845;
+}
+
+.ct-trips tbody:nth-child(odd) {
+  background-color: #161a1f;
+}
+
+.ct-trips tr:hover {
+  background-color: white;
+  color: #161a1f;
+  transition: background-color 0.6s;
+}
+
+.ct-right-bg {
+  clip-path: polygon(100% 0%, 100% 100%, 0 100%, 13% 0%);
+  width: 100%;
+  height: 100%;
+  background-image: url('https://wallpaperaccess.com/full/119615.jpg');
+  background-size: cover;
+  box-shadow: 0 0 15px rgb(0 0 0 / 0.5);
+}
+
+/* Fade in Animations */
+
+@-webkit-keyframes moveFromRightFade {
+	from { opacity: 0.3; -webkit-transform: translateX(100%); }
+}
+@keyframes moveFromRightFade {
+	from { opacity: 0.3; -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(0px, 100px);
+  }
+  to {
+    opacity: 1;
+  }
+}

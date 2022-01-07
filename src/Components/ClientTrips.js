@@ -53,20 +53,48 @@ class ClientTrips extends React.Component {
   render() {
     const { client, clientTrips } = this.state;
     return(
-      <div>
-        <h1>{client.name}'s Trips!</h1>
-        {
-          clientTrips.map((trip) => {
-            const place = this.props.places.find((place) => place.id === trip.placeId);
-            return (
-              <div key={trip.id}>
-                To {place.name} on {this.displayDate(trip.date)} for {trip.purpose}
-                <button onClick={() => this.deleteClientTrip(trip.id)}> X </button>
-                <button onClick={() => this.delayBy(7, trip)}>DELAY BY 1 WEEK</button>
-              </div>
-            )
-          })
-        }
+      <div className='ct'>
+        <div className='ct-left'>
+          <div className='ct-left-wrapper'>
+            <div className='ct-client-trips'>
+              <h1>{client.name}'s Trips!</h1>
+              <table className='ct-trips'>
+                <tbody>
+                  <tr>
+                    <th>Destination</th>
+                    <th>Date of Trip</th>
+                    <th>Trip Purpose</th>
+                    <th>Delay by 1 Week</th>
+                    <th>Cancel Trip</th>
+                  </tr>
+                </tbody>
+                {
+                  clientTrips.map((trip) => {
+                    const place = this.props.places.find((place) => place.id === trip.placeId);
+                    return (
+                      <tbody key={trip.id} className='bt-tbody'>
+                        <tr>
+                          <td>{place.name}</td>
+                          <td>{this.displayDate(trip.date)}</td>
+                          <td>{trip.purpose}</td>
+                          <td id='bt-delay-td'>
+                            <button className='bt-delay-button' onClick={() => this.delayBy(7, trip)}>DELAY BY 1 WEEK</button>
+                          </td>
+                          <td id='bt-delay-td'>
+                            <button className='bt-delay-button' onClick={() => this.deleteClientTrip(trip.id)}> X </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    )
+                  })
+                }
+              </table>
+            </div>
+          </div>
+        </div>
+        <div className='ct-right'>
+          <div className='ct-right-bg'></div>
+        </div>
       </div>
     )
   }

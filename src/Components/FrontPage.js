@@ -1,6 +1,5 @@
 import React from 'react'
 import Travel from '../../public/trav.png'
-import { BiChevronsRight } from 'react-icons/bi'
 
 const FrontPage = () => {
   return (
@@ -11,8 +10,8 @@ const FrontPage = () => {
             <h3>Welcome to the</h3>
             <h1>Acme Travel Agency</h1>
             <h2>Begin your journey with us! Book your trip now!</h2>
-            <button>
-              Book Your Next Trip <BiChevronsRight className='react-icon-arrow'/>
+            <button className='btn btn2'>
+              Book Your Next Trip 
             </button>
           </div>
         </div>

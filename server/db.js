@@ -47,7 +47,7 @@ module.exports = {
   models: {
     Client,
     Place,
-    Trip
+    Trip  
   },  
   syncAndSeed
 }

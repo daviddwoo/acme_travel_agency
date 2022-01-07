@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "build:dev": "npm run build -- --watch --mode=development",
@@ -29,6 +30,7 @@
     "react-icons": "^4.3.1",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
+    "react-router-hash-link": "^2.4.3",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "url-loader": "^4.1.1",

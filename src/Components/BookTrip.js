@@ -104,7 +104,11 @@ class BookTrip extends React.Component {
                       }
                     </select>
                     {
-                      bookTrip.clientId ? <Link to={`/clients/${bookTrip.clientId}`}><h3>Go to Client's Trip</h3> </Link>: null
+                      bookTrip.clientId ? 
+                      <Link to={`/clients/${bookTrip.clientId}`}>
+                        <button className='bt-form-goToTrip-button'>Go to Client's Trip</button>
+                      </Link> 
+                      : null
                     }
                   </div>
                   <div className='bt-form-select'>
@@ -158,6 +162,35 @@ class BookTrip extends React.Component {
                     </tr>
                   </tbody>
                   {
+                    trips.length > 8 ? 
+                    trips.filter((trip) => {
+                      if (this.daysAway(trip.date) < 7) return trip
+                      })
+                      .slice(0, 8)
+                      .map((trip) => {
+                        const client = clients.find((client) => client.id === trip.clientId);
+                        const place = places.find((place) => place.id === trip.placeId);
+                        const daysUntil = this.daysAway(trip.date);
+                        return (
+                          <tbody key={trip.id} className='bt-tbody'>
+                            <tr>
+                              <td>{client.name}</td>
+                              <td>{place.name}</td>
+                              <td>
+                                {daysUntil > 1 ? daysUntil + ' days' : daysUntil + ' day'}
+                              </td>
+                              <td id='bt-delay-td'>
+                                <button className='bt-delay-button' onClick={() => this.delayBy(1, trip)}>DELAY</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                          // <div key={trip.id}>
+                          //   <h1>{client.name} is going to {place.name} in {daysUntil > 1 ? daysUntil + ' days' : daysUntil + ' day'}</h1>
+                          //   <button onClick={() => this.delayBy(1, trip)}>DELAY</button>
+                          // </div>
+                        )
+                      })
+                      :
                     trips.filter((trip) => {
                       if (this.daysAway(trip.date) < 7) return trip
                     })
