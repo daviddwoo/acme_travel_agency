@@ -1,5 +1,12 @@
 const Sequelize = require('sequelize');
-const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost/acme_travel_agency');
+const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost/acme_travel_agency', {
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: process.env.DB_ENABLE_SSL && {
+      rejectUnauthorized: false
+    }
+  }
+  });
 const { STRING, DATE } = Sequelize;
 
 // const pkg = require('../package.json')
