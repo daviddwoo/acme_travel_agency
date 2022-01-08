@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://postgresid:postgrespw@localhost/acme_travel_agency');
+const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://@localhost/acme_travel_agency');
 const { STRING, DATE } = Sequelize
 
 const Client = conn.define('client', {
