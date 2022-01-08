@@ -86,7 +86,6 @@ class BookTrip extends React.Component {
         </Link>
         <div className='bt-header'>
           <h1>Book Your Trip!</h1>
-          {/* <div className='bt-header-border'></div> */}
         </div>
         <div className='bt-form'>
           <div className='bt-left'>
@@ -191,10 +190,6 @@ class BookTrip extends React.Component {
                               </td>
                             </tr>
                           </tbody>
-                          // <div key={trip.id}>
-                          //   <h1>{client.name} is going to {place.name} in {daysUntil > 1 ? daysUntil + ' days' : daysUntil + ' day'}</h1>
-                          //   <button onClick={() => this.delayBy(1, trip)}>DELAY</button>
-                          // </div>
                         )
                       })
                       :
@@ -218,14 +213,9 @@ class BookTrip extends React.Component {
                               </td>
                             </tr>
                           </tbody>
-                          // <div key={trip.id}>
-                          //   <h1>{client.name} is going to {place.name} in {daysUntil > 1 ? daysUntil + ' days' : daysUntil + ' day'}</h1>
-                          //   <button onClick={() => this.delayBy(1, trip)}>DELAY</button>
-                          // </div>
                         )
                       })
                   }
-
                 </table>
               </div>
             </div>
