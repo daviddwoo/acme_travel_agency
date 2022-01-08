@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateTrip, deleteTrip } from '../store'
+import { Link } from 'react-router-dom'
+import Airplane from '../../public/airplaneicon.png'
 
 class ClientTrips extends React.Component {
   constructor(props) {
@@ -54,10 +56,15 @@ class ClientTrips extends React.Component {
     const { client, clientTrips } = this.state;
     return(
       <div className='ct'>
+          <div className='ct-links'>
+            <Link to='/booktrips'>
+              <button>Back to Booking</button>
+            </Link>
+          </div>
         <div className='ct-left'>
           <div className='ct-left-wrapper'>
             <div className='ct-client-trips'>
-              <h1>{client.name}'s Trips!</h1>
+              <h1>Trips for {client.name}</h1>
               <table className='ct-trips'>
                 <tbody>
                   <tr>

@@ -5,7 +5,6 @@ import FrontPage from './Components/FrontPage'
 import { connect } from 'react-redux'
 import { loadClients, loadPlaces, loadTrips } from './store'
 import { HashRouter as Router, Route, Switch} from 'react-router-dom'
-// import Routes from './Components/Routes'
 
 
 class App extends React.Component {

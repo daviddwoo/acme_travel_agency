@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addTrip, updateTrip } from '../store';
 import { Link } from 'react-router-dom'
+import Airplane from '../../public/airplaneicon.png'
 
 class BookTrip extends React.Component {
   constructor(props) {
@@ -77,11 +78,16 @@ class BookTrip extends React.Component {
     const { clients, places, trips, purposes, bookTrip } = this.state;
     return (
       <div className='bt'>
-          <div className='bt-header'>
-            <h1>Book Your Client's Trip Now!</h1>
-            <div className='bt-header-border'></div>
-            <h2>Total Trip Count: {trips.length}</h2>
+        <Link to='/home' className='bt-link-icon'>
+          <div className='bt-icon-home'>
+            <img id='bt-airplane-icon' src={Airplane} alt=''/>
+            <p>ATA</p>
           </div>
+        </Link>
+        <div className='bt-header'>
+          <h1>Book Your Trip!</h1>
+          {/* <div className='bt-header-border'></div> */}
+        </div>
         <div className='bt-form'>
           <div className='bt-left'>
             <div className='bt-form-out-wrapper'>
@@ -106,7 +112,7 @@ class BookTrip extends React.Component {
                     {
                       bookTrip.clientId ? 
                       <Link to={`/clients/${bookTrip.clientId}`}>
-                        <button className='bt-form-goToTrip-button'>Go to Client's Trip</button>
+                        <button className='bt-form-goToTrip-button'>Go to Client</button>
                       </Link> 
                       : null
                     }
@@ -152,6 +158,7 @@ class BookTrip extends React.Component {
           <div className='bt-right'>
             <div className='bt-right-wrapper'>
               <div className='bt-right-table-wrapper'>
+                <h2>Total Trip Count: {trips.length}</h2>
                 <table className='bt-latest-trips'>
                   <tbody>
                     <tr>

@@ -26,7 +26,7 @@ const Trip = conn.define('trip', {
 Client.hasMany(Trip);
 Trip.belongsTo(Client);
 Trip.belongsTo(Place);
-
+ 
 const data = {
   clients: ['Moe', 'Lucy', 'Larry', 'Ethyl'],
   places: ['Antartica', 'Fiji', 'Madagascar', 'Ohio']
