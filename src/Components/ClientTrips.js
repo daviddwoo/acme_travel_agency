@@ -88,7 +88,7 @@ class ClientTrips extends React.Component {
                             <button className='bt-delay-button' onClick={() => this.delayBy(7, trip)}>DELAY BY 1 WEEK</button>
                           </td>
                           <td id='bt-delay-td'>
-                            <button className='bt-delay-button' onClick={() => this.deleteClientTrip(trip.id)}> X </button>
+                            <button className='bt-delay-button' onClick={() => this.deleteClientTrip(trip.id)}> CANCEL </button>
                           </td>
                         </tr>
                       </tbody>
