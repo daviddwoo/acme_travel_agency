@@ -82,5 +82,3 @@ const init = async() => {
 };
 
 init();
-
-// postgres://pscwjsnkrtohkp:fed253404b4005b465827fa74c20f2bbaee7fa4edb56c2daabe5e0feed2bc315@ec2-18-235-86-66.compute-1.amazonaws.com:5432/d1uhu110liccvs
